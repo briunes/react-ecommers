@@ -6,7 +6,7 @@ function Home() {
     <>
       <Navbar />
       <Main />
-      <Products />
+      <Products ignoreNavbar={true} />
       <Footer />
     </>
   )

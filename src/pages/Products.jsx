@@ -2,10 +2,10 @@ import { Alert, Box, Button, Container, Grid, Snackbar, Typography } from '@mui/
 import { useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { useDispatch } from 'react-redux';
-import { Footer, ProductCard } from "../components";
+import { Footer, Navbar, ProductCard } from "../components";
 import { addCart } from '../redux/action';
 
-const Products = () => {
+const Products = ({ignoreNavbar}) => {
 
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -111,6 +111,7 @@ const Products = () => {
 
   return (
     <>
+      {!ignoreNavbar && <Navbar />}
       <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
         <Typography variant="h4" align="center" gutterBottom>
           Products
